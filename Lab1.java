@@ -28,8 +28,8 @@ public class Lab1 {
  
         // TODO: Declare your variables here
         String weatherConditions;
-        String precipitation;
-        String windSpeed;
+        int precipitation;
+        int windSpeed;
         double highTemp;
         double lowTemp;
         int uvIndex;
@@ -47,9 +47,9 @@ public class Lab1 {
         System.out.print("Enter today's weather conditions (e.g., Sunny, Rainy): ");
         weatherConditions = input.nextLine();
         System.out.print("Enter possibility of precipitation (e.g., 20%): ");
-        precipitation = input.nextLine();
+        precipitation = input.nextInt();
         System.out.print("Enter wind speed (e.g., 15 km/h): ");
-        windSpeed = input.nextLine();
+        windSpeed = input.nextInt();
         // TODO: Use loops to validate high/low temperatures and UV index
         while (true) {
             System.out.print("Enter daily high temperature: ");
@@ -101,24 +101,19 @@ public class Lab1 {
         else {
             System.out.println("- No sunscreen needed");
         }
-        if (precipitation.endsWith("%")) {
-            int precipValue = Integer.parseInt(precipitation.replace("%", ""));
-            if (precipValue >= 50) {
-                System.out.println("- Carry an umbrella");
-            }
-            else {
-                System.out.println("- No umbrella needed");
-            }
-        } 
-        if (windSpeed.endsWith(" km/h")) {
-            int windValue = Integer.parseInt(windSpeed.replace(" km/h", ""));
-            if (windValue > 40) {
-                System.out.println("- Windy conditions");
-            }
-            else {
-                System.out.println("- Calm wind conditions");
-            }
+        if (precipitation >= 50) {
+            System.out.println("- Carry an umbrella");
         }
+        else {
+            System.out.println("- No umbrella needed");
+        } 
+        if (windSpeed > 40) {
+            System.out.println("- Windy conditions");
+        }
+        else {
+            System.out.println("- Calm wind conditions");
+        }
+        
         if(highTemp > 30){
             System.out.println("- Stay hydrated");
         }
@@ -140,13 +135,12 @@ public class Lab1 {
         // TODO: Construct your full weather report here
         String fullReport = String.format(
             "Today's Weather Report:\n" +
-            "Conditions: %s\n" +
-            "Precipitation: %s\n" +
-            "Wind Speed: %s\n" +
-            "High Temperature: %d°C\n" +
-            "Low Temperature: %d°C\n" +
-            "UV Index: %d\n",
-            weatherConditions, precipitation, windSpeed, highTempInt, lowTempInt, uvIndex
+            "Weather Conditions: " + weatherConditions + "\n" +
+            "Possibility of Precipitation: " + precipitation + "%%\n" +
+            "Wind Speed: " + windSpeed + " km/h\n" +
+            "High Temperature: " + highTempInt + "°C\n" +
+            "Low Temperature: " + lowTempInt + "°C\n" +
+            "UV Index: " + uvIndex + "\n"      
         );
  
         /*
@@ -155,7 +149,7 @@ public class Lab1 {
  
  
         // TODO: Output your report using System.out.println()
- 
+        System.out.println("\n" + fullReport);
  
         /*
         STEP 7: Optional extra challenge
