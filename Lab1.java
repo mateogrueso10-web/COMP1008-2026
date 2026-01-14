@@ -44,6 +44,12 @@ public class Lab1 {
  
  
         // TODO: Prompt user and read input
+        System.out.print("Enter today's weather conditions (e.g., Sunny, Rainy): ");
+        weatherConditions = input.nextLine();
+        System.out.print("Enter possibility of precipitation (e.g., 20%): ");
+        precipitation = input.nextLine();
+        System.out.print("Enter wind speed (e.g., 15 km/h): ");
+        windSpeed = input.nextLine();
         // TODO: Use loops to validate high/low temperatures and UV index
  
  
