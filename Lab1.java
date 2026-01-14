@@ -190,12 +190,27 @@ public class Lab1 {
                 System.out.println("UV index must be non-negative. Please re-enter.");
             }
         }
+            highTempInt = (int) highTemp;
+            lowTempInt = (int) lowTemp;
+            fullReport = String.format(
+            "Today's Weather Report:\n" +
+            "Weather Conditions: " + weatherConditions + "\n" +
+            "Possibility of Precipitation: " + precipitation + "%%\n" +
+            "Wind Speed: " + windSpeed + " km/h\n" +
+            "High Temperature: " + highTempInt + "°C\n" +
+            "Low Temperature: " + lowTempInt + "°C\n" +
+            "UV Index: " + uvIndex + "\n"      
+        );
+            System.out.println("\n" + fullReport);
+            System.out.print("Do you want to enter another day's report? (yes/no): ");
+            response = input.next();
+        }
+        
 
  
         input.close();
     }
     }
-}
  
  
  
