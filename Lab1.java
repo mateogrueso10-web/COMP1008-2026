@@ -51,7 +51,18 @@ public class Lab1 {
         System.out.print("Enter wind speed (e.g., 15 km/h): ");
         windSpeed = input.nextLine();
         // TODO: Use loops to validate high/low temperatures and UV index
- 
+        while (true) {
+            System.out.print("Enter daily high temperature: ");
+            highTemp = input.nextDouble();
+            System.out.print("Enter daily low temperature: ");
+            lowTemp = input.nextDouble();
+            if (highTemp >= lowTemp) {
+                break;
+            } else {
+                System.out.println("High temperature must be greater than or equal to low temperature. Please re-enter.");
+            }
+        }
+        
  
         /*
         STEP 3: Typecasting (if needed)
