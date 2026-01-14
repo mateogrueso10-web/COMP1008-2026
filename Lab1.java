@@ -62,6 +62,16 @@ public class Lab1 {
                 System.out.println("High temperature must be greater than or equal to low temperature. Please re-enter.");
             }
         }
+
+        while (true) {
+            System.out.print("Enter UV index (0-11+): ");
+            uvIndex = input.nextInt();
+            if (uvIndex >= 0) {
+                break;
+            } else {
+                System.out.println("UV index must be non-negative. Please re-enter.");
+            }
+        }
         
  
         /*
