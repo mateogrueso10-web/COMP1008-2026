@@ -77,7 +77,7 @@ class Student {
  
 // MAIN CLASS
  
-public class Day2 {
+public class Week2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
  
