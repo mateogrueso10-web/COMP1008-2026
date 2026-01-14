@@ -159,7 +159,38 @@ public class Lab1 {
  
  
         // TODO: Implement loop for multiple reports
- 
+        System.out.print("Do you want to enter another day's report? (yes/no): ");
+        String response = input.next();
+        while(response.equalsIgnoreCase("yes")){
+            // Repeat the input and report generation process
+            System.out.print("Enter today's weather conditions (e.g., Sunny, Rainy): ");
+            weatherConditions = input.next();
+            System.out.print("Enter possibility of precipitation (e.g., 20%): ");
+            precipitation = input.nextInt();
+            System.out.print("Enter wind speed (e.g., 15 km/h): ");
+            windSpeed = input.nextInt();
+            while (true) {
+            System.out.print("Enter daily high temperature: ");
+            highTemp = input.nextDouble();
+            System.out.print("Enter daily low temperature: ");
+            lowTemp = input.nextDouble();
+            if (highTemp >= lowTemp) {
+                break;
+            } else {
+                System.out.println("High temperature must be greater than or equal to low temperature. Please re-enter.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Enter UV index (0-11+): ");
+            uvIndex = input.nextInt();
+            if (uvIndex >= 0) {
+                break;
+            } else {
+                System.out.println("UV index must be non-negative. Please re-enter.");
+            }
+        }
+
  
         input.close();
     }
