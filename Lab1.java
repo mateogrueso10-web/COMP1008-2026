@@ -98,6 +98,9 @@ public class Lab1 {
         if (uvIndex >= 6) {
             System.out.println("- Use sunscreen");
         }
+        else {
+            System.out.println("- No sunscreen needed");
+        }
         if (precipitation.endsWith("%")) {
             int precipValue = Integer.parseInt(precipitation.replace("%", ""));
             if (precipValue >= 50) {
@@ -113,6 +116,10 @@ public class Lab1 {
         if(highTemp > 30){
             System.out.println("- Stay hydrated");
         }
+        else if(highTemp < 0){
+            System.out.println("- Dress warmly");
+        }
+
         if(lowTemp < 0){
             System.out.println("- Dress warmly");
         }
