@@ -94,7 +94,28 @@ public class Lab1 {
  
  
         // TODO: Write if, if-else, or nested if statements to display tips
- 
+        System.out.println("Weather Tips:");
+        if (uvIndex >= 6) {
+            System.out.println("- Use sunscreen");
+        }
+        if (precipitation.endsWith("%")) {
+            int precipValue = Integer.parseInt(precipitation.replace("%", ""));
+            if (precipValue >= 50) {
+                System.out.println("- Carry an umbrella");
+            }
+        } 
+        if (windSpeed.endsWith(" km/h")) {
+            int windValue = Integer.parseInt(windSpeed.replace(" km/h", ""));
+            if (windValue > 40) {
+                System.out.println("- Windy conditions");
+            }
+        }
+        if(highTemp > 30){
+            System.out.println("- Stay hydrated");
+        }
+        if(lowTemp < 0){
+            System.out.println("- Dress warmly");
+        }
  
         /*
         STEP 5: Create a fullReport String
