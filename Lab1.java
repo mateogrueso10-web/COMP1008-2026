@@ -106,11 +106,17 @@ public class Lab1 {
             if (precipValue >= 50) {
                 System.out.println("- Carry an umbrella");
             }
+            else {
+                System.out.println("- No umbrella needed");
+            }
         } 
         if (windSpeed.endsWith(" km/h")) {
             int windValue = Integer.parseInt(windSpeed.replace(" km/h", ""));
             if (windValue > 40) {
                 System.out.println("- Windy conditions");
+            }
+            else {
+                System.out.println("- Calm wind conditions");
             }
         }
         if(highTemp > 30){
@@ -132,7 +138,16 @@ public class Lab1 {
  
  
         // TODO: Construct your full weather report here
- 
+        String fullReport = String.format(
+            "Today's Weather Report:\n" +
+            "Conditions: %s\n" +
+            "Precipitation: %s\n" +
+            "Wind Speed: %s\n" +
+            "High Temperature: %d°C\n" +
+            "Low Temperature: %d°C\n" +
+            "UV Index: %d\n",
+            weatherConditions, precipitation, windSpeed, highTempInt, lowTempInt, uvIndex
+        );
  
         /*
         STEP 6: Print the full weather report
