@@ -13,66 +13,56 @@ import java.util.Scanner;
  
 class Account {
     // Instance variables (private for encapsulation)
-    private String name;
-    private double balance;
-
+        private String name;
+        private double balance;
+ 
     // Constant: minimum balance
-    private static final double MIN_BALANCE = 0.0;
-
+    private static final double MIN_Balance = 0.0;
+     
     /**
      * Constructor to initialize Account object
      * @param name Account holder's name
      * @param balance Initial balance (must be >= 0)
      */
    
-    Account(String name, double balance) {
+    Account(String name, double balance){
         this.name = name;
-        if (balance >= MIN_BALANCE) {
+        if(balance >= MIN_Balance)
             this.balance = balance;
-        } else {
-            this.balance = MIN_BALANCE;
-        }
+        else
+            balance = MIN_Balance;
     }
- 
     
     // Set Methods (Mutators)
-    
     void setName(String name) {
         this.name = name;
     }
-
-    void setBalance(double balance) {
-        if (balance >= MIN_BALANCE) {
-            this.balance = balance;
-        }
+    void setBalance(double balance){
+        if(balance >= MIN_Balance)
+            this.balance = balance;        
     }
-
+  
     // Get Methods (Accessors)
-    
-    String getName() {
+    String getName(){
         return name;
     }
 
-    double getBalance() {
+    double getBalance(){
         return balance;
     }
-
     // Display Info
-    void displayInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Balance: " + balance);
+    void displayInfo(){
+        System.out.println("Account Name: " + name);
+        System.out.println("Balance: $" + balance);
     }
-
-    // Method with parameter and return
-    double deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
-        return balance;
-    }
-
-}
     
+    // Method with parameter and return
+        double deposit(double amount){
+            if(amount > 0)
+                balance += amount;
+            return balance;
+        }
+    }
   
  
 // ABSTRACT CLASS EXAMPLE
@@ -80,25 +70,27 @@ class Account {
 abstract class AccountBase {
     // abstract method
     abstract double calculateInterest();
+ 
  //normal method
-    void displayAccountType() {
-        System.out.println("This is a base account.");
-    }
+ void displayType(){
+    System.out.println("This is a base account type");
+ }
     
 }
  
  
 class SavingsAccount extends AccountBase {
+    
     private double balance;
-    private double rate; // interest rate
+    private double rate;
 
-    SavingsAccount(double balance, double rate) {
+    SavingsAccount(double balance, double rate){
         this.balance = balance;
         this.rate = rate;
     }
     @Override
-    double calculateInterest() {
-        return balance * rate / 100;
+    double calculateInterest(){
+        return balance * rate;
     }
 }
  
@@ -125,6 +117,7 @@ class AccountReport implements Printable {
         account.displayInfo();
     }
 }
+
  
  
 // -------------------------
@@ -139,35 +132,42 @@ public class Main {
         Scanner input = new Scanner(System.in);
        
         // 1. Creating Account Objects
-        Account acc1 = new Account("Alice", 100);
-        Account acc2 = new Account("Bob", 200);
+        Account acc1 = new Account("Shivi",100);
+        Account acc2 = new Account("Alice",200);
         acc1.displayInfo();
         acc2.displayInfo();
+               
         // 2. Using Set/Get Methods
-        acc1.setName("Alice Wonderland");
+        acc1.setName("Shivali Dhaka");
         System.out.println(acc1.getName());
+      
         // 3. Primitive vs Reference Types
-        Account acc3 = acc1; // Reference type
-        acc3.setBalance(500);
+            Account acc3 = acc1;
+            acc3.setBalance(500);
+        
         // 4. Constants
-        System.out.println("Account 1 Balance after update: " + acc1.getBalance());
+        System.out.println("\nMinimum balance constant: $" + 0.0);
+      
         // 5. Methods with Parameters & Return Values
+
         double newBalance = acc2.deposit(1000);
-        System.out.println("Account 2 New Balance after deposit: " + newBalance);
+        System.out.println("acc2 new balance= $" + newBalance);
+        
         // 6. Abstract Class
-        SavingsAccount sa = new SavingsAccount(1200, 0.05);
-        sa.displayAccountType();
-        System.out.println("Interest on Savings Account: " + sa.calculateInterest());
+        SavingsAccount sa = new SavingsAccount(1000, 0.06);
+        sa.displayType();
+        System.err.println("Ineterest for savings account = $" + sa.calculateInterest());
+
+       
         // 7. Interface
         AccountReport report = new AccountReport(acc1);
         report.print();
         // 8. Scanner Example (Optional User Input)
-        System.err.println("\n--- Enter New Name for Acc2 ---");
-        String newName = input.nextLine();
-        acc2.setName(newName);
-        acc2.displayInfo();
-        input.close();
-       
+       System.err.println("\nEnternew name for acc2");
+       String newName = input.nextLine();
+       acc2.setName(newName);
+       acc2.displayInfo();
+       input.close();
     }
 }
 
