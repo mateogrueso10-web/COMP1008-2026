@@ -21,7 +21,8 @@ public class Lab4 {
         // ================================================
         // STEP 2: Print the array using Arrays.toString()
         // ================================================
-        System.out.println("Grocery Array: " + Arrays.toString(groceries));
+        System.out.println("Grocery List");
+        System.out.println("\nGrocery List: " + Arrays.toString(groceries) + "\n");
  
  
         // ================================================
@@ -45,7 +46,7 @@ public class Lab4 {
         // Remove one item by name or index
         groceryList.remove("Eggs");
         // Print the updated ArrayList
-        System.out.println("Updated Grocery List: " + groceryList);
+        System.out.println("Updated Grocery List: " + groceryList + "\n");
         // ================================================
         
  
@@ -71,7 +72,7 @@ public class Lab4 {
         // ================================================
         // STEP 6: Print the final results
         // ================================================
-        System.out.println("Number of items starting with a vowel: " + vowelCount);
+        System.out.println("Number of items starting with a vowel: " + vowelCount + "\n");
         
  
     }
