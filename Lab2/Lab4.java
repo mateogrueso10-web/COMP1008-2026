@@ -53,8 +53,17 @@ public class Lab4 {
  
         // ================================================
         // STEP 5: Count how many items start with a vowel
-        // Hint: vowels = a, e, i, o, u
-        // Use .toLowerCase(). startsWith()
+        int vowelCount = 0;
+        for (String item : groceryList) {
+            // Check if the item starts with a vowel
+            // Hint: vowels = a, e, i, o, u
+            // Use .toLowerCase(). startsWith()
+            char firstChar = Character.toLowerCase(item.charAt(0));     
+            if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
+                vowelCount++;
+            }
+        }
+
         // ================================================
         
  
@@ -62,6 +71,7 @@ public class Lab4 {
         // ================================================
         // STEP 6: Print the final results
         // ================================================
+        System.out.println("Number of items starting with a vowel: " + vowelCount);
         
  
     }
