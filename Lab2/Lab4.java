@@ -40,8 +40,12 @@ public class Lab4 {
         // ================================================
         // STEP 4: Modify the ArrayList
         // Add two new items
+        groceryList.add("Bananas");
+        groceryList.add("Yogurt");
         // Remove one item by name or index
+        groceryList.remove("Eggs");
         // Print the updated ArrayList
+        System.out.println("Updated Grocery List: " + groceryList);
         // ================================================
         
  
