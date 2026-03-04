@@ -150,6 +150,13 @@ public class StudentValidatorLab {
         // STEP 12:
         // Create string: "Invoice number is 4567 and total is 890"
         // Use Pattern and Matcher to extract all numbers
+        String invoice = "Invoice number is 4567 and total is 890";
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(invoice);
+        System.out.println("Numbers in the invoice:");
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
  
  
  
