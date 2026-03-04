@@ -92,13 +92,20 @@ public class StudentValidatorLab {
  
         // STEP 7:
         // Ask user to enter a sentence
- 
+        System.out.println("Enter a sentence:");
+        String sentence = scanner.nextLine();
  
  
  
         // STEP 8:
         // Count vowels using Character class
- 
+        int vowelCount = 0;
+        for (char c : sentence.toCharArray()) {
+            if (Character.toLowerCase(c) == 'a' || Character.toLowerCase(c) == 'e' || Character.toLowerCase(c) == 'i' || Character.toLowerCase(c) == 'o' || Character.toLowerCase(c) == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("Number of vowels in the sentence: " + vowelCount);
  
  
  
