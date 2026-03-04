@@ -132,6 +132,12 @@ public class StudentValidatorLab {
         // Create string: "Math,Science,Java,English"
         // Split using comma
         // Print each course
+        String courses = "Math,Science,Java,English";
+        String[] courseArray = courses.split(",");
+        System.out.println("Courses:");
+        for (String course : courseArray) {
+            System.out.println(course);
+        }
  
  
  
