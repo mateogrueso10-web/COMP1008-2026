@@ -56,6 +56,23 @@ public class LibraryManager {
                         }
                     }
                     break;
+                
+                case 3:
+                    // Display available books
+                    boolean foundAvailable = false;
+
+                    for (Book book : library) {
+                        if (book.isAvailable()) {
+                            book.displayInfo();
+                            foundAvailable = true;
+                        }
+                    }
+
+                    if (!foundAvailable) {
+                        System.out.println("No available books.");
+                    }
+                    break;
+
 
             }
         } while (choice != 7);
