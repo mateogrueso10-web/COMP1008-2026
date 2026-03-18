@@ -30,4 +30,14 @@ public class Book {
     public String getAuthor() {
         return author;
     }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    //settters with validation
 }
