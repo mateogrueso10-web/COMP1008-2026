@@ -40,4 +40,34 @@ public class Book {
     }
 
     //settters with validation
+    public void setTitle(String title) {
+        if (title != null && !title.isEmpty()) {
+            this.title = title;
+        } else {
+            System.out.println("Invalid title. Title cannot be empty.");
+        }
+    }
+
+    public void setAuthor(String author) {
+        if (author != null && !author.isEmpty()) {
+            this.author = author;
+        } else {
+            System.out.println("Invalid author. Author cannot be empty.");
+        }
+    }
+
+    public void setIsbn(String isbn) {
+        if (isbn != null && !isbn.isEmpty()) {
+            this.isbn = isbn;
+        } else {
+            System.out.println("Invalid ISBN. ISBN cannot be empty.");
+        }
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+
+
 }
