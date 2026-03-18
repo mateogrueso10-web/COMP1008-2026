@@ -44,6 +44,19 @@ public class LibraryManager {
 
                     System.out.println("Book added successfully!");
                     break;
+
+                case 2:
+                    // Display all books
+                    if (library.isEmpty()) {
+                        System.out.println("No books in the library.");
+                    } else {
+                        System.out.println("Books in the library:");
+                        for (Book book : library) {
+                            System.out.println(book);
+                        }
+                    }
+                    break;
+
             }
         } while (choice != 7);
         scanner.close();
