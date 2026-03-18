@@ -73,6 +73,23 @@ public class LibraryManager {
                     }
                     break;
 
+                case 4:
+                    // Search by author
+                    System.out.print("Enter author name to search: ");
+                    String searchAuthor = scanner.nextLine();
+                    boolean foundAuthor = false;
+                    for (Book book : library) {
+                        if (book.getAuthor().equalsIgnoreCase(searchAuthor)) {
+                            book.displayInfo();
+                            foundAuthor = true;
+                        }
+                    }
+                    if (!foundAuthor) {
+                        System.out.println("No books found by that author.");
+                    }
+                    break;
+                
+                
 
             }
         } while (choice != 7);
