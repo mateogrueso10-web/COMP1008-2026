@@ -131,6 +131,13 @@ public class LibraryManager {
                     }
                     break;
 
+                case 7:
+                    System.out.println("Exiting program...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+
             }
         } while (choice != 7);
         scanner.close();
