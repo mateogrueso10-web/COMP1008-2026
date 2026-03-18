@@ -26,6 +26,25 @@ public class LibraryManager {
             }
             choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
+
+            switch (choice){
+                case 1: 
+                    // Add book
+                    System.out.print("Enter title: ");
+                    String title = scanner.nextLine();
+
+                    System.out.print("Enter author: ");
+                    String author = scanner.nextLine();
+
+                    System.out.print("Enter ISBN (10 or 13 chars): ");
+                    String isbn = scanner.nextLine();
+
+                    Book newBook = new Book(title, author, isbn);
+                    library.add(newBook);
+
+                    System.out.println("Book added successfully!");
+                    break;
+            }
         } while (choice != 7);
         scanner.close();
 
