@@ -109,6 +109,27 @@ public class LibraryManager {
                         System.out.println("Book not available or not found.");
                     }
                     break;
+                
+                case 6:
+                    // Return book
+                    System.out.print("Enter ISBN to return: ");
+                    String returnIsbn = scanner.nextLine();
+
+                    boolean returned = false;
+
+                    for (Book book : library) {
+                        if (book.getIsbn().equals(returnIsbn) && !book.isAvailable()) {
+                            book.setAvailable(true);
+                            System.out.println("Book returned.");
+                            returned = true;
+                            break;
+                        }
+                    }
+
+                    if (!returned) {
+                        System.out.println("Book not found or already available.");
+                    }
+                    break;
 
             }
         } while (choice != 7);
