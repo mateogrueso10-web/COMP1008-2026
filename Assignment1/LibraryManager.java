@@ -89,7 +89,26 @@ public class LibraryManager {
                     }
                     break;
                 
-                
+                case 5:
+                    // Check out book
+                    System.out.print("Enter ISBN to check out: ");
+                    String checkoutIsbn = scanner.nextLine();
+
+                    boolean checkedOut = false;
+
+                    for (Book book : library) {
+                        if (book.getIsbn().equals(checkoutIsbn) && book.isAvailable()) {
+                            book.setAvailable(false);
+                            System.out.println("Book checked out.");
+                            checkedOut = true;
+                            break;
+                        }
+                    }
+
+                    if (!checkedOut) {
+                        System.out.println("Book not available or not found.");
+                    }
+                    break;
 
             }
         } while (choice != 7);
