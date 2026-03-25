@@ -25,11 +25,11 @@ public class CalculatorApp extends Application {
         Button divideButton = new Button("/");
  
         // Step 3: Create Label for result
-       
+        Label resultLabel = new Label("Result will be shown here");
         // Step 4: HBox for buttons
-       
+        HBox buttonBox = new HBox(10, addButton, subtractButton, multiplyButton, divideButton);
         // Step 5: VBox main layout
-       
+        VBox mainLayout = new VBox(10, num1Field, num2Field, buttonBox, resultLabel);
         // Step 6: Event handling for buttons
        
         // Step 7: Create scene and show stage
