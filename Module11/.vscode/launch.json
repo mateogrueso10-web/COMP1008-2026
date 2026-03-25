@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run JavaFX",
+      "request": "launch",
+      "mainClass": "Module11.JavaFXLearningActivity",
+      "vmArgs": "--module-path \"/Users/matew/Downloads/javafx-sdk-21.0.10/lib\" --add-modules javafx.controls"
+    }
+  ]
+}
