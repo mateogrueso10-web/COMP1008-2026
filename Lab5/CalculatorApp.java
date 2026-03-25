@@ -31,7 +31,46 @@ public class CalculatorApp extends Application {
         // Step 5: VBox main layout
         VBox mainLayout = new VBox(10, num1Field, num2Field, buttonBox, resultLabel);
         // Step 6: Event handling for buttons
-       
+        addButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(num1Field.getText());
+                double num2 = Double.parseDouble(num2Field.getText());
+                resultLabel.setText("Result: " + (num1 + num2));
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Invalid input! Please enter numbers.");
+            }
+        });
+        subtractButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(num1Field.getText());
+                double num2 = Double.parseDouble(num2Field.getText());
+                resultLabel.setText("Result: " + (num1 - num2));
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Invalid input! Please enter numbers.");
+            }
+        });
+        multiplyButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(num1Field.getText());
+                double num2 = Double.parseDouble(num2Field.getText());
+                resultLabel.setText("Result: " + (num1 * num2));
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Invalid input! Please enter numbers.");
+            }
+        });
+        divideButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(num1Field.getText());
+                double num2 = Double.parseDouble(num2Field.getText());
+                if (num2 == 0) {
+                    resultLabel.setText("Error: Division by zero is not allowed.");
+                } else {
+                    resultLabel.setText("Result: " + (num1 / num2));
+                }
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Invalid input! Please enter numbers.");
+            }
+        });
         // Step 7: Create scene and show stage
        
     }
